@@ -1,0 +1,25 @@
+{
+  "name": "Voting Demo ",
+  "shortname": "demo",
+  "voteoptions": [{
+    "id": 1,
+    "name": "Ben",
+    "votes": 0,
+    "numbers": []
+    },
+    {
+      "id": 2,
+      "name": "Kevin",
+      "votes": 1,
+      "numbers": []
+    },
+    {
+      "id": 3,
+      "name": "Jared",
+      "votes": 2,
+      "numbers": []
+      }
+  ],
+  "phonenumber": "change later",
+  "state": "on"
+}

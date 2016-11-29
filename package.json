@@ -1,0 +1,25 @@
+{
+  "name": "smsVoter-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benhalverson/smsVoter-api.git"
+  },
+  "keywords": [],
+  "author": "Ben Halverson <benhalverson33@gmail.com> (http://benhalverson.me/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/benhalverson/smsVoter-api/issues"
+  },
+  "homepage": "https://github.com/benhalverson/smsVoter-api#readme",
+  "dependencies": {
+    "express": "5.0.0-alpha.2",
+    "mongoose": "4.7.0",
+    "twilio": "2.11.1"
+  }
+}
