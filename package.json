@@ -2,9 +2,10 @@
   "name": "smsVoter-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel app.js -d build/ -s",
+    "watch": "babel -w app.js -d build/ -s"
   },
   "repository": {
     "type": "git",
@@ -18,8 +19,15 @@
   },
   "homepage": "https://github.com/benhalverson/smsVoter-api#readme",
   "dependencies": {
+    "body-parser": "1.15.2",
     "express": "5.0.0-alpha.2",
     "mongoose": "4.7.0",
     "twilio": "2.11.1"
+  },
+  "devDependencies": {
+    "babel-cli": "6.18.0",
+    "babel-core": "6.18.2",
+    "babel-preset-es2015-node": "6.1.1",
+    "babel-preset-stage-2": "6.18.0"
   }
 }
