@@ -1,25 +1,47 @@
 import config from './config';
 import utils from './utils';
-import mongoose from 'mongoose';
+import cradle from 'cradle';
+
+const connection = new(cradle.Connection)(config.couchdb.url, config.couchdb.port, {
+  auth:{username: config.couchdb.username, password: config.couchdb.password},
+  cache: true})
+
+const events = connection.database('events');
 
 
-const events = mongoose.connect(config.mongoose.url, (error) => {
-  if(error) {
-    console.log('An error occured', error);
-  }
-});
-
-
-//TODO query events based on either shortname or phonenumber (both are unique keys)
 const findBy = exports.findBy = (attr, val, callback, retries) => {
-  let retries = (typeof retries !== 'undefined') ? retries : 0;
+  retries = (typeof retries !== 'undefined') ? retries : 0;
 
+  events.view('event/by'+utils.initcap(attr), {key: val}, (err, res) => {
+    if(err) {
+      if(retries < 3) {
+        console.log(`Failed to load event, retrying: ${attr}, ${val}`);
+      } else {
+        let msg = `Failed to load event, DONE retrying: ${attr}, ${val}`;
+        console.log(msg);
+        callback(msg, null);
+      }
+    } else {
+      if(res.length != 1) {
+        let msg = `No matching event: ${attr}, ${val}`;
+      } else {
+        let event = res[0].value;
+        callback(null, event);
+      }
+    }
+  });
 
 }
 
 // check to see if this user has voted for this event
-const hasVoted = exports.hasVoted = () => {
-
+const hasVoted = exports.hasVoted = (event, number) => {
+  let retval = false;
+  event.voteoptions.forEach(function(vo) {
+    if(vo.numbers.indexOf(number) >= 0) {
+      retval = true;
+    }
+  });
+  return retval;
 }
 
 // persist the vote to the DB

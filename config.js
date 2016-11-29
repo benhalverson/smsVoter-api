@@ -1,17 +1,16 @@
 let config = {};
 
-config.mongodb = {};
+config.couchdb = {};
 config.twilio = {};
 
-config.mongodb.url = 'mongodb://localhost/smsData';
-config.mongodb.port = 27017;
-config.mongodb.username: '';
-config.mongodb.password: '';
+config.couchdb.url = 'couchdb://localhost/smsData';
+config.couchdb.port = 5984;
+config.couchdb.username = 'admin';
+config.couchdb.password = 'apple123';
 
 config.twilio.sid = 'ACxxx';
 config.twilio.key = 'yyy';
 config.twilio.smsWebhook = 'http://localhost/vote/sms';
 config.twilio.voiceWebhook = 'http://localhost/vote/voice';
 config.disableTwilioSigCheck = false;
-
 module.exports = config;

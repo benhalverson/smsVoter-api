@@ -20,8 +20,10 @@
   "homepage": "https://github.com/benhalverson/smsVoter-api#readme",
   "dependencies": {
     "body-parser": "1.15.2",
+    "cradle": "0.7.1",
     "express": "5.0.0-alpha.2",
     "mongoose": "4.7.0",
+    "morgan": "1.7.0",
     "twilio": "2.11.1"
   },
   "devDependencies": {
