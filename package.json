@@ -19,17 +19,17 @@
   },
   "homepage": "https://github.com/benhalverson/smsVoter-api#readme",
   "dependencies": {
-    "body-parser": "1.15.2",
+    "body-parser": "1.16.1",
     "cradle": "0.7.1",
     "express": "5.0.0-alpha.2",
-    "mongoose": "4.7.0",
-    "morgan": "1.7.0",
+    "mongoose": "4.8.2",
+    "morgan": "1.8.1",
     "twilio": "2.11.1"
   },
   "devDependencies": {
-    "babel-cli": "6.18.0",
-    "babel-core": "6.18.2",
+    "babel-cli": "6.23.0",
+    "babel-core": "6.23.1",
     "babel-preset-es2015-node": "6.1.1",
-    "babel-preset-stage-2": "6.18.0"
+    "babel-preset-stage-2": "6.22.0"
   }
 }
