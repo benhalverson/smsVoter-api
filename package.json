@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/benhalverson/smsVoter-api#readme",
   "dependencies": {
-    "body-parser": "1.15.2",
+    "body-parser": "1.19.0",
     "cradle": "0.7.1",
     "express": "5.0.0-alpha.2",
     "mongoose": "4.7.0",
