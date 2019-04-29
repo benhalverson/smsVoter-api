@@ -27,9 +27,9 @@
     "twilio": "2.11.1"
   },
   "devDependencies": {
-    "babel-cli": "6.18.0",
-    "babel-core": "6.18.2",
+    "babel-cli": "6.26.0",
+    "babel-core": "6.26.3",
     "babel-preset-es2015-node": "6.1.1",
-    "babel-preset-stage-2": "6.18.0"
+    "babel-preset-stage-2": "6.24.1"
   }
 }
